@@ -5,7 +5,7 @@ class AuthorBiography(models.Model):
         "books.Author", on_delete=models.CASCADE, related_name="biography", verbose_name="Автор"
     )
     biography = models.TextField(verbose_name="Биография")
-    date_of_birth = models.DateField(verbose_name="Дата рождения", null=True, blank=False)
+    date_of_birth = models.DateField(verbose_name="Дата рождения", null=True, blank=True)
     date_of_death = models.DateField(verbose_name="Дата смерти", null=True, blank=True)
 
     class Meta:
