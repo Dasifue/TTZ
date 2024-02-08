@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container-row">
+    <div class="row" id="author-row">
+        <!-- Здесь будут отображаться данные об авторах -->
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    const url = 'ws://127.0.0.1:8000/ws/authors/';
+    const socket = new WebSocket(url);
+
+    socket.onmessage = function(event) {
+        let data = JSON.parse(event.data);
+        console.log("Data:", data);
+
+        let authors = JSON.parse(data);
+        let authorRow = document.getElementById("author-row");
+        authorRow.innerHTML = "";
+
+        authors.forEach(function(author) {
+            console.log("Data: ", author)
+            let card = `
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card" style="width: 18rem; margin: 20px;">
+                        <img src="${author.data.image}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${author.data.name}</h5>
+                            <p class="card-text">Hello</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>`;
+            authorRow.innerHTML += card;
+        });
+    };
+</script>
+{% endblock %}

@@ -6,3 +6,5 @@ from .forms import AuthorForm, AuthorBiographyForm, GenreForm, BookForm
 class HomeView(generic.TemplateView):
     template_name = "base.html"
 
+class AuthorsView(generic.TemplateView):
+    template_name = "authors.html"

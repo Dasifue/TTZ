@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'drf_yasg',
 
     #applications
-    'apps.books.apps.BooksConfig',
+    'apps.books',
 ]
 
 MIDDLEWARE = [
