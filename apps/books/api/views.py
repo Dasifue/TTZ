@@ -1,6 +1,6 @@
 from rest_framework import viewsets, permissions
 
-from .serializers import AuthorBiographySerializer, AuthorSerializer, GenreSerializer, BookSerializer
+from apps.books.serializers import AuthorBiographySerializer, AuthorSerializer, GenreSerializer, BookSerializer
 from apps.books.models import AuthorBiography, Author, Genre, Book
 
 

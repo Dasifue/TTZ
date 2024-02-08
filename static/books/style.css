@@ -1,0 +1,11 @@
+h1.default-block-content {
+    text-align: center;
+    margin-top: 15%;
+}
+
+div.container-row {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}

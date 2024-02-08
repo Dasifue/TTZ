@@ -23,8 +23,13 @@ from .swagger import schema_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #API
     path("api/", include("apps.books.api.urls")),
     path("api/swagger/", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui"),
+
+    #TEMPlATES
+    path("", include("apps.books.urls")),
 
 ]
 
